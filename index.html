@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex">
+    <title>PDF & EPUB 预览服务</title>
+    <!-- 引入京華老宋体 -->
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/jhlst/dist/京華老宋体v1_007/result.css' />
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #34495e;
+            --background-color: #e7f3ff;
+            --code-background-color: #efefef;
+        }
+
+        /* 新增诗歌背景板样式 */
+        .poem-background {
+            position: fixed;
+            bottom: calc(50% - 300px);
+            left: 50%;
+            z-index: -1;
+            opacity: 0.15;
+            width: 2000px;
+            text-align: left;
+            color: #93a1a9;
+            pointer-events: none;
+            line-height: 1.8;
+        }
+
+        .poem-background p {
+            margin: 0;
+            font-size: 4.0rem;
+        }
+
+        body {
+            position: relative;
+            font-family: 'KingHwa_OldSong', 'Noto Serif SC', serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 内容容器 */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        /* 标题区域 */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin: 20px 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* 说明区域 */
+        .instructions {
+            background: rgb(247, 251, 255);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-top: 40px;
+        }
+
+        .notice {
+            background: #fee;
+            border-left: 4px solid var(--accent-color);
+            padding: 16px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        code {
+            background: var(--code-background-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--accent-color);
+        }
+
+        .mirror {
+            color: var(--secondary-color);
+            font-weight: 600;
+            padding: 2px 4px;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 4px;
+        }
+
+        /* 页脚 */
+        footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #ecf0f1;
+            width: 100%;
+            text-align: center;
+            color: #95a5a6;
+            position: relative;
+            z-index: 1;
+            background: rgb(247, 251, 255, 0.8);
+        }
+
+        footer div {
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .poem-background {
+                display: none;
+                /* 移动端隐藏背景诗 */
+            }
+
+            .instructions {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 诗歌区块 -->
+    <div class="poem-background">
+        <p>朝辞白帝彩云间，千里江陵一日还。</p>
+        <p>两岸猿声啼不住，轻舟已过万重山。</p>
+        <p>- —— 节选自 李白《早发白帝城》</p>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>PDF & EPUB 预览服务</h1>
+            <p class="subtitle">仅为个人使用，不对外提供服务</p>
+        </header>
+
+        <section class="instructions">
+            <h2>使用指南</h2>
+            <div class="notice">
+                <strong>服务公告：</strong>此服务仅供个人使用，暂不对外提供服务。请勿用于商业用途。
+            </div>
+            <p>此页面支持在线预览 PDF 和 EPUB 格式的文件。上传并选择文件后，您可以直接在浏览器中查看。</p>
+
+            <ul>
+                <li><strong>上传文件：</strong>直接拖拽文件至页面。</li>
+                <li><strong>预览：</strong>支持快速加载和流畅浏览。</li>
+            </ul>
+
+            <p><strong>提醒：</strong>请确保上传的文件符合格式要求，若文件过大，加载可能会有所延迟。</p>
+
+            <footer>
+                <script defer src="https://cn.vercount.one/js"></script>
+                <div>页面访问次数 <span id="vercount_value_page_pv">加载中...</span></div>
+                <div>网站总请求量 <span id="vercount_value_site_pv">加载中...</span></div>
+                <div>独立访客统计 <span id="vercount_value_site_uv">加载中...</span></div>
+            </footer>
+        </section>
+    </div>
+</body>
+
+</html>
