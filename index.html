@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="googlebot" content="noindex">
     <title>PDF & EPUB 预览服务</title>
     <!-- 引入京華老宋体 -->
@@ -16,7 +17,7 @@
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
             --text-color: #34495e;
-            --background-color: #e7f3ff;
+            --background-color: #ffe7e7;
             --code-background-color: #efefef;
         }
 
@@ -162,27 +163,34 @@
 <body>
     <!-- 诗歌区块 -->
     <div class="poem-background">
-        <p>朝辞白帝彩云间，千里江陵一日还。</p>
-        <p>两岸猿声啼不住，轻舟已过万重山。</p>
-        <p>- —— 节选自 李白《早发白帝城》</p>
+        <p>大鹏一日同风起，扶摇直上九万里。</p>
+        <p>假令风歇时下来，犹能簸却沧溟水。</p>
+        <p>世人见我恒殊调，闻余大言皆冷笑。</p>
+        <p>宣父犹能畏后生，丈夫未可轻年少。</p>
+        <p>  —— 节选自 李白《上李邕》</p>
     </div>
 
     <div class="container">
         <header class="header">
             <h1>PDF & EPUB 预览服务</h1>
-            <p class="subtitle">仅为个人使用，不对外提供服务</p>
+            <p class="subtitle">基于 PDF.js 和 ePub.js 的在线文件预览服务。</p>
         </header>
 
         <section class="instructions">
-            <h2>使用指南</h2>
+            <h2>使用说明</h2>
             <div class="notice">
                 <strong>服务公告：</strong>此服务仅供个人使用，暂不对外提供服务。请勿用于商业用途。
             </div>
-            <p>此页面支持在线预览 PDF 和 EPUB 格式的文件。上传并选择文件后，您可以直接在浏览器中查看。</p>
+            <p>此页面支持在线预览 PDF 和 EPUB 格式的文件，基于 <a href="https://mozilla.github.io/pdf.js/" target="_blank" rel="noopener">PDF.js</a> 和 <a href="https://github.com/futurepress/epub.js/" target="_blank" rel="noopener">ePub.js</a> 开发。</p>
+            <h2>使用教程</h2>
 
             <ul>
-                <li><strong>上传文件：</strong>直接拖拽文件至页面。</li>
-                <li><strong>预览：</strong>支持快速加载和流畅浏览。</li>
+                <li><strong>PDF.js：</strong></li>
+                <ul>示例页面：<a href="/pdf.js/web/viewer.html" target="_blank" rel="noopener">PDF.js 预览</a></ul>
+                <ul>示例文件：<a href="/pdf.js/web/compressed.tracemonkey-pldi-09.pdf" target="_blank" rel="noopener">PDF 示例文件</a></ul>
+                <ul>使用自定义文件需要添加 <code>?file=</code> 参数，例如：<code>/pdf.js/web/viewer.html?file=compressed.tracemonkey-pldi-09.pdf</code></ul>
+                <li><strong>EPUB.js：</strong></li>
+                <ul>示例页面：<a href="/epub.js/viewer.html" target="_blank" rel="noopener">EPUB.js 预览</a></ul>
             </ul>
 
             <p><strong>提醒：</strong>请确保上传的文件符合格式要求，若文件过大，加载可能会有所延迟。</p>
